@@ -11,7 +11,7 @@ export const UpdateTaskForm = ({
   setIsDialogOpen,
   task,
 }) => {
-  const { id, completedTask } = task;
+  const { id, completed } = task;
   const [taskName, setTaskName] = useState("");
 
   const handleUpdateTaskName = async () => {
