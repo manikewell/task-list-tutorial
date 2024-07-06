@@ -1,6 +1,5 @@
 import React, { useState } from "react";
-import { Button } from "@mui/base";
-import { Dialog, DialogTitle, TextField } from "@mui/material";
+import { Button, Dialog, DialogTitle, TextField } from "@mui/material";
 import CheckIcon from "@mui/icons-material/Check";
 import axios from "axios";
 import { API_URL } from "../utils";
@@ -41,9 +40,10 @@ export const UpdateTaskForm = ({
           onChange={(e) => setTaskName(e.target.value)}
         />
         <Button
-          variant="contianed"
+          variant="contained"
           onClick={async () => {
             await handleUpdateTaskName();
+            
             setIsDialogOpen(false);
           }}
         >

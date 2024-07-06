@@ -18,9 +18,9 @@ export default function App() {
   const fetchTasks = async () => {
     try {
       const { data } = await axios.get(API_URL);
+      console.log('malakian', data)
 
       setTasks(data);
-      console.log('malakian:', data);
     } catch (err) {
       console.log(err);
     }

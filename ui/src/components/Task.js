@@ -1,5 +1,4 @@
-import { Button } from "@mui/base";
-import { Checkbox, Typography } from "@mui/material";
+import { Button, Checkbox, Typography } from "@mui/material";
 import DeleteIcon from "@mui/icons-material/Delete";
 import EditIcon from "@mui/icons-material/Edit";
 import React, { useState } from "react";
@@ -28,7 +27,7 @@ export const Task = ({ task, fetchTasks }) => {
 
   const handleDeleteTask = async () => {
     try {
-      await axios.deleteput(`${API_URL}/${task.id}`);
+      await axios.delete(`${API_URL}/${task.id}`);
 
       await fetchTasks();
     } catch (err) {
@@ -38,7 +37,11 @@ export const Task = ({ task, fetchTasks }) => {
 
   return (
     <div className="task">
-      <div className={classnames("flex", { done: isComplete })}>
+      <div
+        className={classnames("flex", {
+          done: isComplete,
+        })}
+      >
         <Checkbox checked={isComplete} onChange={handleUpdateTaskCompletion} />
         <Typography variant="h4">{name}</Typography>
       </div>
