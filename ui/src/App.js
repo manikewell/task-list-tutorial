@@ -20,6 +20,7 @@ export default function App() {
       const { data } = await axios.get(API_URL);
 
       setTasks(data);
+      console.log('malakian:', data);
     } catch (err) {
       console.log(err);
     }
