@@ -10,12 +10,13 @@ export const AddTaskForm = ({ fetchTasks }) => {
 
   const addNewTask = async () => {
     try {
-      await axios.post(API_URL, {
+      console.log('malakian add task 1', newTask)
+      /*await axios.post(API_URL, {
         name: newTask,
         completed: false,
       });
 
-      await fetchTasks();
+      await fetchTasks();*/
 
       setNewTask("");
     } catch (err) {
