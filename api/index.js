@@ -30,6 +30,8 @@ app.post("/task", async (req, res) => {
   try {
     const task = req.body;
 
+    console.log('malakian api index post task 1', task)
+
     const response = await createTasks(task);
 
     res.send(response);

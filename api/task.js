@@ -23,6 +23,8 @@ export const fetchTasks = async () => {
 };
 
 export const createTasks = async (name, completed) => {
+  console.log('malakian api taskjs createTasks 1 name:', name)
+  console.log('malakian api taskjs createTasks 1 completed:', completed)
   const uuid = crypto.randomUUID();
   const command = new PutCommand({
     TableName: "Tasks",
@@ -33,6 +35,7 @@ export const createTasks = async (name, completed) => {
     },
   });
   const response = await docClient.send(command);
+  console.log('malakian api taskjs createTasks 1 response:', response)
 
   return response;
 };
